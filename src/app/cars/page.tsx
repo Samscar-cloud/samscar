@@ -1,7 +1,23 @@
+import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { prisma } from '@/lib/prisma'
 import { CarCard } from '@/components/CarCard'
 import { CarFilters } from '@/components/CarFilters'
+
+export const metadata: Metadata = {
+  title: "Catalogue Véhicules à Vendre | Sam's Cars Hotton",
+  description: "Parcourez notre catalogue de voitures d'occasion à vendre à Hotton, Belgique. Véhicules inspectés, prix transparents.",
+  keywords: ["voiture occasion Hotton", "acheter voiture Belgique", "catalogue auto", "véhicule occasion"],
+  openGraph: {
+    title: "Catalogue Véhicules — Sam's Cars Hotton",
+    description: "Voitures d'occasion à vendre à Hotton. Véhicules inspectés, prix transparents.",
+    url: "https://samscarage.be/cars",
+    siteName: "Sam's Cars",
+    locale: "fr_BE",
+    type: "website",
+  },
+  alternates: { canonical: "https://samscarage.be/cars" },
+}
 
 export default async function CarsPage({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
   const make = typeof searchParams.make === 'string' ? searchParams.make.trim() : undefined

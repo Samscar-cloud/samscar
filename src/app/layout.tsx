@@ -10,9 +10,10 @@ import { MobileStickyCTA } from '@/components/MobileStickyCTA'
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata = {
-  title: "Sam's cars Hotton",
-  description: 'Réparation et maintenance professionnelle de véhicules à Hotton.',
+  title: "Sam's Cars Hotton — Garage & Réparation Auto",
+  description: 'Garage automobile à Hotton, Belgique. Réparation, entretien, prise de RDV en ligne.',
   manifest: '/manifest.json',
+  metadataBase: new URL('https://samscarage.be'),
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',

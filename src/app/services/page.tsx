@@ -1,8 +1,24 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { ServiceCard } from '@/components/ServiceCard'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: "Services — Réparation & Entretien Auto | Sam's Cars Hotton",
+  description: "Découvrez tous nos services: changement de freins, réparation moteur, révision complète. Garage Sam's Cars à Hotton, Belgique.",
+  keywords: ["services garage", "réparation freins", "révision voiture", "entretien auto Hotton"],
+  openGraph: {
+    title: "Services Auto — Sam's Cars Hotton",
+    description: "Changement de freins, réparation moteur, révision. Prenez RDV en ligne.",
+    url: "https://samscarage.be/services",
+    siteName: "Sam's Cars",
+    locale: "fr_BE",
+    type: "website",
+  },
+  alternates: { canonical: "https://samscarage.be/services" },
+}
 
 const STATIC_SERVICES = [
   { id: '1', name: 'Révision complète', description: 'Inspection complète et maintenance générale du véhicule.', price: 120, slug: 'revision-complete', icon: '🔧' },

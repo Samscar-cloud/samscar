@@ -1,4 +1,20 @@
+import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
+
+export const metadata: Metadata = {
+  title: "Sam's Cars Hotton — Garage & Réparation Auto en Belgique",
+  description: "Garage automobile à Hotton, Belgique. Réparation, entretien, changement de freins, révision complète. Prenez RDV en ligne facilement.",
+  keywords: ["garage Hotton", "réparation auto Belgique", "mécanicien Hotton", "entretien voiture", "Sam's Cars"],
+  openGraph: {
+    title: "Sam's Cars Hotton — Garage & Réparation Auto",
+    description: "Garage automobile à Hotton. Réparation, entretien, prise de RDV en ligne.",
+    url: "https://samscarage.be",
+    siteName: "Sam's Cars",
+    locale: "fr_BE",
+    type: "website",
+  },
+  alternates: { canonical: "https://samscarage.be" },
+}
 import { ServicesPreview } from '@/components/ServicesPreview'
 import { TrustIndicators } from '@/components/TrustIndicators'
 import { Reviews } from '@/components/Reviews'
