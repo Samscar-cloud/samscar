@@ -33,3 +33,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude
+.claude/
+
+# temp files
+temp_docx/
+*.docx
+*.zip
+*.ps1
+build.log
+test-results/

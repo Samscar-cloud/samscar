@@ -163,7 +163,7 @@ export default function AccountPage() {
 
   if (!session) {
     return (
-      <main className="min-h-screen bg-gray-50 py-12">
+      <main className="min-h-screen bg-gray-900 py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold mb-4">Mon compte</h1>
           <p className="mb-6">Vous devez vous connecter pour accéder à votre espace.</p>
@@ -176,32 +176,32 @@ export default function AccountPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="min-h-screen bg-gray-900 py-12">
       <div className="container mx-auto px-4 space-y-8">
-        <section className="bg-white rounded-xl shadow p-6">
-          <h1 className="text-3xl font-bold mb-4">Mon compte</h1>
-          <p className="mb-2">Nom: {session.user?.name}</p>
-          <p className="mb-2">Email: {session.user?.email}</p>
-          <p className="mb-2">Rôle: {session.user?.role || 'USER'}</p>
+        <section className="bg-gray-800 rounded-xl shadow p-6 border border-gray-700">
+          <h1 className="text-3xl font-bold mb-4 text-white">Mon compte</h1>
+          <p className="mb-2 text-gray-300">Nom: {session.user?.name}</p>
+          <p className="mb-2 text-gray-300">Email: {session.user?.email}</p>
+          <p className="mb-2 text-gray-300">Rôle: {session.user?.role || 'USER'}</p>
         </section>
 
-        <section className="bg-white rounded-xl shadow p-6">
-          <h2 className="text-2xl font-semibold mb-4">Mes véhicules</h2>
+        <section className="bg-gray-800 rounded-xl shadow p-6 border border-gray-700">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Mes véhicules</h2>
           {loading ? (
             <p>Chargement...</p>
           ) : (
             <div className="space-y-4">
               {vehicles.length === 0 ? (
-                <p className="text-sm text-gray-600">Aucun véhicule enregistrée.</p>
+                <p className="text-sm text-gray-400">Aucun véhicule enregistrée.</p>
               ) : (
                 <div className="space-y-3">
                   {vehicles.map((vehicle) => (
-                    <div key={vehicle.id} className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b pb-3">
+                    <div key={vehicle.id} className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-gray-700 pb-3">
                       <div>
-                        <p className="font-semibold">
+                        <p className="font-semibold text-gray-200">
                           {vehicle.make} {vehicle.model} ({vehicle.year})
                         </p>
-                        {vehicle.vin && <p className="text-sm text-gray-600">VIN: {vehicle.vin}</p>}
+                        {vehicle.vin && <p className="text-sm text-gray-400">VIN: {vehicle.vin}</p>}
                       </div>
                       <button
                         onClick={() => handleDeleteVehicle(vehicle.id)}
@@ -219,14 +219,14 @@ export default function AccountPage() {
                   value={vehicleForm.make}
                   onChange={(e) => setVehicleForm((prev) => ({ ...prev, make: e.target.value }))}
                   placeholder="Marque"
-                  className="p-3 border rounded-lg"
+                  className="p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                   required
                 />
                 <input
                   value={vehicleForm.model}
                   onChange={(e) => setVehicleForm((prev) => ({ ...prev, model: e.target.value }))}
                   placeholder="Modèle"
-                  className="p-3 border rounded-lg"
+                  className="p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                   required
                 />
                 <input
@@ -234,14 +234,14 @@ export default function AccountPage() {
                   onChange={(e) => setVehicleForm((prev) => ({ ...prev, year: e.target.value }))}
                   placeholder="Année"
                   type="number"
-                  className="p-3 border rounded-lg"
+                  className="p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                   required
                 />
                 <input
                   value={vehicleForm.vin}
                   onChange={(e) => setVehicleForm((prev) => ({ ...prev, vin: e.target.value }))}
                   placeholder="VIN (optionnel)"
-                  className="p-3 border rounded-lg"
+                  className="p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                 />
                 <button
                   type="submit"
@@ -255,29 +255,29 @@ export default function AccountPage() {
           )}
         </section>
 
-        <section className="bg-white rounded-xl shadow p-6">
-          <h2 className="text-2xl font-semibold mb-4">Mes réservations</h2>
+        <section className="bg-gray-800 rounded-xl shadow p-6 border border-gray-700">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Mes réservations</h2>
           {loading ? (
             <p>Chargement...</p>
           ) : bookings.length === 0 ? (
-            <p className="text-sm text-gray-600">Aucune réservation pour le moment.</p>
+            <p className="text-sm text-gray-400">Aucune réservation pour le moment.</p>
           ) : (
             <div className="space-y-6">
               {bookings.map((booking) => (
-                <div key={booking.id} className="border-b pb-6">
+                <div key={booking.id} className="border-b border-gray-700 pb-6">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div>
-                      <p className="font-semibold">{booking.service.name}</p>
-                      <p className="text-sm text-gray-600">Date: {new Date(booking.date).toLocaleString()}</p>
-                      <p className="text-sm text-gray-600 flex items-center gap-2">
+                      <p className="font-semibold text-gray-200">{booking.service.name}</p>
+                      <p className="text-sm text-gray-400">Date: {new Date(booking.date).toLocaleString()}</p>
+                      <p className="text-sm text-gray-400 flex items-center gap-2">
                         Statut: {getStatusBadge(booking.status)}
                       </p>
                       {booking.vehicle && (
-                        <p className="text-sm text-gray-600">
-                          Véhicule: {booking.vehicle.make} {booking.vehicle.model} ({booking.vehicle.year})
+                        <p className="text-sm text-gray-400">
+                          Véхикуле: {booking.vehicle.make} {booking.vehicle.model} ({booking.vehicle.year})
                         </p>
                       )}
-                      {booking.notes && <p className="text-sm text-gray-600">Notes: {booking.notes}</p>}
+                      {booking.notes && <p className="text-sm text-gray-400">Notes: {booking.notes}</p>}
                     </div>
                     <button
                       className="btn-accent self-start"
@@ -288,10 +288,10 @@ export default function AccountPage() {
                   </div>
 
                   {booking.status === 'COMPLETED' && (
-                    <div className="mt-4 pt-4 border-t">
+                    <div className="mt-4 pt-4 border-t border-gray-700">
                       {booking.review ? (
                         <div className="space-y-2">
-                          <p className="font-semibold">Votre avis:</p>
+                          <p className="font-semibold text-gray-200">Votre avis:</p>
                           <div className="flex">
                             {[...Array(5)].map((_, i) => (
                               <span key={i} className={`text-lg ${i < booking.review!.rating ? 'text-yellow-400' : 'text-gray-300'}`}>
@@ -299,11 +299,11 @@ export default function AccountPage() {
                               </span>
                             ))}
                           </div>
-                          {booking.review.comment && <p className="text-sm text-gray-700">{booking.review.comment}</p>}
+                          {booking.review.comment && <p className="text-sm text-gray-300">{booking.review.comment}</p>}
                         </div>
                       ) : (
-                        <div className="bg-gray-50 rounded-lg p-4">
-                          <p className="font-semibold mb-3">Laisser un avis</p>
+                        <div className="bg-gray-700 rounded-lg p-4">
+                          <p className="font-semibold mb-3 text-gray-200">Laisser un avis</p>
                           <ReviewForm
                             bookingId={booking.id}
                             onSuccess={() => loadData()}
@@ -318,32 +318,32 @@ export default function AccountPage() {
           )}
         </section>
 
-        <section className="bg-white rounded-xl shadow p-6">
+        <section className="bg-gray-800 rounded-xl shadow p-6 border border-gray-700">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-semibold">Rappels d&apos;entretien</h2>
-              <p className="text-sm text-gray-600">Gérez vos rappels pour vos véhicules.</p>
+              <h2 className="text-2xl font-semibold text-white">Rappels d&apos;entretien</h2>
+              <p className="text-sm text-gray-400">Gérez vos rappels pour vos véhicules.</p>
             </div>
           </div>
 
           {loading ? (
             <p>Chargement...</p>
           ) : vehicles.length === 0 ? (
-            <p className="text-sm text-gray-600">Ajoutez un véhicule pour créer des rappels.</p>
+            <p className="text-sm text-gray-400">Ajoutez un véhicule pour créer des rappels.</p>
           ) : (
             <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
               <div className="space-y-4">
                 {reminders.length === 0 ? (
-                  <div className="rounded-xl bg-gray-50 p-6 text-gray-700">Aucun rappel pour le moment.</div>
+                  <div className="rounded-xl bg-gray-700 p-6 text-gray-300">Aucun rappel pour le moment.</div>
                 ) : (
                   <div className="space-y-4">
                     {reminders.map((reminder) => (
-                      <div key={reminder.id} className="rounded-xl border border-gray-200 p-4">
+                      <div key={reminder.id} className="rounded-xl border border-gray-700 bg-gray-700 p-4">
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                           <div>
-                            <p className="font-semibold">{reminder.vehicle.make} {reminder.vehicle.model} ({reminder.vehicle.year})</p>
-                            <p className="text-sm text-gray-600">Date de rappel: {new Date(reminder.dueDate).toLocaleDateString()}</p>
-                            {reminder.description && <p className="text-sm text-gray-600 mt-2">{reminder.description}</p>}
+                            <p className="font-semibold text-gray-200">{reminder.vehicle.make} {reminder.vehicle.model} ({reminder.vehicle.year})</p>
+                            <p className="text-sm text-gray-400">Date de rappel: {new Date(reminder.dueDate).toLocaleDateString()}</p>
+                            {reminder.description && <p className="text-sm text-gray-400 mt-2">{reminder.description}</p>}
                           </div>
                           <div className="flex flex-col items-start gap-2 text-right sm:items-end">
                             <span className={`text-xs font-semibold uppercase ${reminder.completed ? 'text-green-700' : 'text-yellow-700'}`}>
@@ -373,8 +373,8 @@ export default function AccountPage() {
                 )}
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-                <h3 className="text-lg font-semibold mb-4">Créer un rappel</h3>
+              <div className="rounded-xl border border-gray-700 bg-gray-700 p-6">
+                <h3 className="text-lg font-semibold mb-4 text-gray-200">Créer un rappel</h3>
                 <ReminderForm vehicles={vehicles} onSuccess={loadData} />
               </div>
             </div>
