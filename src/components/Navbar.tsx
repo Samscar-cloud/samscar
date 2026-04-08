@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { useSession } from 'next-auth/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
@@ -17,6 +18,8 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const { data: session } = useSession()
+  const isAdmin = session?.user?.role === 'ADMIN'
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -52,6 +55,11 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+          {isAdmin && (
+            <Link href="/admin" className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors uppercase tracking-wider">
+              Admin
+            </Link>
+          )}
           <Link href="/booking" className="btn-primary text-xs py-2 px-4 shadow-none">
             Prendre RDV
           </Link>
@@ -87,6 +95,11 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
+              {isAdmin && (
+                <Link href="/admin" onClick={closeMenu} className="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors uppercase tracking-wider">
+                  Admin
+                </Link>
+              )}
               <Link
                 href="/booking"
                 onClick={closeMenu}
