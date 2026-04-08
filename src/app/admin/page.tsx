@@ -51,22 +51,22 @@ export default async function AdminPage() {
   const maxBookingCount = Math.max(...bookingsByDay.map((d) => d.count), 1)
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="min-h-screen bg-gray-100 pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-6">Panneau d&apos;administration</h1>
+        <h1 className="text-3xl font-bold mb-6 text-gray-900">Panneau d&apos;administration</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
             <p className="text-sm text-gray-500">Utilisateurs</p>
-            <p className="text-3xl font-semibold">{userCount}</p>
+            <p className="text-3xl font-semibold text-gray-900">{userCount}</p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 border-l-4 border-green-500">
             <p className="text-sm text-gray-500">Services</p>
-            <p className="text-3xl font-semibold">{serviceCount}</p>
+            <p className="text-3xl font-semibold text-gray-900">{serviceCount}</p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 border-l-4 border-indigo-500">
             <p className="text-sm text-gray-500">Véhicules</p>
-            <p className="text-3xl font-semibold">{vehicleCount}</p>
+            <p className="text-3xl font-semibold text-gray-900">{vehicleCount}</p>
           </div>
         </div>
 
