@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Read(//c/Users/Ramzan/OneDrive/Desktop/**)",
+      "Bash(docker --version)",
+      "Bash(docker run:*)",
+      "Bash(npx prisma:*)",
+      "Bash(DATABASE_URL=\"postgresql://postgres:postgres@localhost:5432/auto_service\" npx prisma migrate deploy)",
+      "Bash(DATABASE_URL=\"postgresql://postgres:postgres@localhost:5432/auto_service\" npx prisma db push)",
+      "Bash(netstat -ano)",
+      "Read(//c/Users/Ramzan/OneDrive/Desktop/гараж/**)",
+      "Bash(xargs -I{} taskkill //PID {} //F)",
+      "Bash(DATABASE_URL=\"postgresql://postgres:postgres@localhost:5432/auto_service\" npx ts-node --compiler-options '{\"\"module\"\":\"\"CommonJS\"\"}' prisma/seed.ts)",
+      "Bash(set DATABASE_URL=postgresql://postgres:postgres@localhost:5432/auto_service)",
+      "Bash(npx dotenv:*)"
+    ]
+  }
+}

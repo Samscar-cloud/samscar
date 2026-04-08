@@ -1,0 +1,77 @@
+import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
+import './globals.css'
+import { Providers } from './providers'
+import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
+import { CookieBanner } from '@/components/CookieBanner'
+import { MobileStickyCTA } from '@/components/MobileStickyCTA'
+
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
+
+export const metadata = {
+  title: "Sam's cars Hotton",
+  description: 'Réparation et maintenance professionnelle de véhicules à Hotton.',
+  manifest: '/manifest.json',
+  themeColor: '#12121a',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: "Sam's cars",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="fr" className={`${montserrat.variable} bg-carbon-300 text-gray-100`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoRepair",
+              "name": "Sam's cars Hotton",
+              "image": "https://example.com/hero-garage.jpg",
+              "@id": "",
+              "url": "https://example.com",
+              "telephone": process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "+32470000000",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rue de Barvaux 25A",
+                "addressLocality": "Hotton",
+                "postalCode": "6990",
+                "addressCountry": "BE"
+              },
+              "priceRange": "$$",
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            })
+          }}
+        />
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID}");`,
+            }}
+          />
+        )}
+      </head>
+      <body className={`${montserrat.className} bg-carbon-300 text-gray-100 antialiased`}>
+        <Navbar />
+        <Providers>{children}</Providers>
+        <Footer />
+        <MobileStickyCTA />
+        <CookieBanner />
+      </body>
+    </html>
+  )
+}
