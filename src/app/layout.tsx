@@ -66,11 +66,13 @@ export default function RootLayout({
         )}
       </head>
       <body className={`${montserrat.className} bg-carbon-300 text-gray-100 antialiased`}>
-        <Navbar />
-        <Providers>{children}</Providers>
-        <Footer />
-        <MobileStickyCTA />
-        <CookieBanner />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+          <MobileStickyCTA />
+          <CookieBanner />
+        </Providers>
       </body>
     </html>
   )
