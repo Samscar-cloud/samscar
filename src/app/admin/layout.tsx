@@ -10,39 +10,27 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-10">
-        <header className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-          <h1 className="text-3xl font-bold">Panneau d&apos;administration</h1>
+        <header className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 bg-white rounded-xl p-4 shadow">
+          <h1 className="text-3xl font-bold text-gray-900">Panneau d&apos;administration</h1>
           <nav className="mt-4 md:mt-0 flex flex-wrap gap-2">
-            <a
-              href="/admin/services"
-              className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium hover:bg-gray-50"
-            >
+            <a href="/admin" className="px-4 py-2 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700">
+              Dashboard
+            </a>
+            <a href="/admin/services" className="px-4 py-2 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700">
               Services
             </a>
-            <a
-              href="/admin/bookings"
-              className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium hover:bg-gray-50"
-            >
+            <a href="/admin/bookings" className="px-4 py-2 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700">
               Réservations
             </a>
-            <a
-              href="/admin/users"
-              className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium hover:bg-gray-50"
-            >
+            <a href="/admin/users" className="px-4 py-2 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700">
               Clients
             </a>
-            <a
-              href="/admin/listings"
-              className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium hover:bg-gray-50"
-            >
+            <a href="/admin/listings" className="px-4 py-2 rounded-lg bg-yellow-500 text-black text-sm font-medium hover:bg-yellow-400">
               Catalogue
             </a>
-            <a
-              href="/admin/vehicles"
-              className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium hover:bg-gray-50"
-            >
+            <a href="/admin/vehicles" className="px-4 py-2 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700">
               Véhicules
             </a>
           </nav>
