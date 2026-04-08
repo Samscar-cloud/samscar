@@ -33,28 +33,28 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="min-h-screen bg-gray-900 py-12">
       <div className="container mx-auto px-4">
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow p-8">
-          <h1 className="text-2xl font-bold mb-6">Se connecter</h1>
+        <div className="max-w-md mx-auto bg-gray-800 rounded-xl shadow p-8 border border-gray-700">
+          <h1 className="text-2xl font-bold mb-6 text-white">Se connecter</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
+              <label className="block text-sm font-medium mb-1 text-gray-200">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border rounded-lg"
+                className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Mot de passe</label>
+              <label className="block text-sm font-medium mb-1 text-gray-200">Mot de passe</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 border rounded-lg"
+                className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-500"
                 required
               />
             </div>
