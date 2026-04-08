@@ -13,12 +13,15 @@ export const metadata = {
   title: "Sam's cars Hotton",
   description: 'Réparation et maintenance professionnelle de véhicules à Hotton.',
   manifest: '/manifest.json',
-  themeColor: '#12121a',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
-    title: "Sam's cars",
+    statusBarStyle: 'black-translucent',
+    title: "Sam's Cars",
   },
+}
+
+export const viewport = {
+  themeColor: '#12121a',
 }
 
 export default function RootLayout({
@@ -29,6 +32,10 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${montserrat.variable} bg-carbon-300 text-gray-100`}>
       <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192.svg" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Sam's Cars" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
