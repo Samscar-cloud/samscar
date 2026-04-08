@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
@@ -64,6 +64,19 @@ export function Navbar() {
             Prendre RDV
           </Link>
           <div className="h-5 w-px bg-white/20" />
+          {session ? (
+            <button
+              onClick={() => signOut({ callbackUrl: '/' })}
+              className="text-sm font-semibold text-gray-300 hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Déconnexion
+            </button>
+          ) : (
+            <Link href="/auth/signin" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors uppercase tracking-wider">
+              Connexion
+            </Link>
+          )}
+          <div className="h-5 w-px bg-white/20" />
           <LocaleSwitcher />
         </nav>
         <button
@@ -107,6 +120,18 @@ export function Navbar() {
               >
                 Prendre RDV
               </Link>
+              {session ? (
+                <button
+                  onClick={() => { closeMenu(); signOut({ callbackUrl: '/' }) }}
+                  className="text-sm font-semibold text-gray-300 hover:text-white transition-colors uppercase tracking-wider text-left"
+                >
+                  Déconnexion
+                </button>
+              ) : (
+                <Link href="/auth/signin" onClick={closeMenu} className="text-sm font-semibold text-gray-300 hover:text-white transition-colors uppercase tracking-wider">
+                  Connexion
+                </Link>
+              )}
               <div className="flex justify-start">
                 <LocaleSwitcher />
               </div>
