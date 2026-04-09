@@ -1,21 +1,13 @@
 import Link from "next/link";
-import {
-  WrenchScrewdriverIcon,
-  Cog6ToothIcon,
-  StopCircleIcon,
-  AdjustmentsHorizontalIcon,
-  BoltIcon,
-  TruckIcon,
-} from "@heroicons/react/24/outline";
 import { ServiceCard } from "./ServiceCard";
 
 const services = [
-  { name: "Moteur", icon: WrenchScrewdriverIcon, slug: "engine" },
-  { name: "Transmission", icon: Cog6ToothIcon, slug: "transmission" },
-  { name: "Freins", icon: StopCircleIcon, slug: "brakes" },
-  { name: "Suspension", icon: AdjustmentsHorizontalIcon, slug: "suspension" },
-  { name: "Électrique", icon: BoltIcon, slug: "electrical" },
-  { name: "Carrosserie", icon: TruckIcon, slug: "bodywork" },
+  { name: "Moteur", slug: "engine" },
+  { name: "Transmission", slug: "transmission" },
+  { name: "Freins", slug: "brakes" },
+  { name: "Suspension", slug: "suspension" },
+  { name: "Électrique", slug: "electrical" },
+  { name: "Carrosserie", slug: "bodywork" },
 ];
 
 export function ServicesPreview() {

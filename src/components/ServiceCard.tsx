@@ -1,16 +1,35 @@
 "use client";
 
-import type { ComponentType, SVGProps } from 'react'
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  WrenchScrewdriverIcon,
+  Cog6ToothIcon,
+  StopCircleIcon,
+  AdjustmentsHorizontalIcon,
+  BoltIcon,
+  TruckIcon,
+} from "@heroicons/react/24/outline";
+
+const ICON_MAP = {
+  engine: WrenchScrewdriverIcon,
+  transmission: Cog6ToothIcon,
+  brakes: StopCircleIcon,
+  suspension: AdjustmentsHorizontalIcon,
+  electrical: BoltIcon,
+  bodywork: TruckIcon,
+} as const;
+
+type IconKey = keyof typeof ICON_MAP;
 
 interface ServiceCardProps {
   readonly name: string
-  readonly icon: ComponentType<SVGProps<SVGSVGElement>>
   readonly slug: string
 }
 
-export function ServiceCard({ name, icon: Icon, slug }: ServiceCardProps) {
+export function ServiceCard({ name, slug }: ServiceCardProps) {
+  const Icon = ICON_MAP[slug as IconKey] ?? WrenchScrewdriverIcon;
+
   return (
     <Link href={`/services/${slug}`} className="block h-full">
       <motion.div
@@ -26,8 +45,7 @@ export function ServiceCard({ name, icon: Icon, slug }: ServiceCardProps) {
         </div>
         <h3 className="text-xl font-bold mb-3 text-gray-900">{name}</h3>
         <p className="text-gray-600 text-sm leading-relaxed mb-8">
-          Service professionnel pour {name.toLowerCase()} avec garantie de
-          qualité.
+          Service professionnel pour {name.toLowerCase()} avec garantie de qualité.
         </p>
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-all duration-300 group-hover:translate-x-1">
           <span>En savoir plus</span>
