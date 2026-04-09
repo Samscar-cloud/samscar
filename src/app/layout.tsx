@@ -1,44 +1,64 @@
-import type { Metadata } from 'next'
-import { Montserrat, Geist } from 'next/font/google'
-import './globals.css'
-import { Providers } from './providers'
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
-import { CookieBanner } from '@/components/CookieBanner'
-import { MobileStickyCTA } from '@/components/MobileStickyCTA'
+import type { Metadata } from "next";
+import { Montserrat, Geist } from "next/font/google";
+import "./globals.css";
+import { Providers } from "./providers";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { CookieBanner } from "@/components/CookieBanner";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata = {
   title: "Sam's Cars Hotton — Garage & Réparation Auto",
-  description: 'Garage automobile à Hotton, Belgique. Réparation, entretien, prise de RDV en ligne.',
-  manifest: '/manifest.json',
-  metadataBase: new URL('https://samscarage.be'),
+  description:
+    "Garage automobile à Hotton, Belgique. Réparation, entretien, prise de RDV en ligne.",
+  manifest: "/manifest.json",
+  metadataBase: new URL("https://samscarage.be"),
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: "black-translucent",
     title: "Sam's Cars",
   },
-}
+};
 
 export const viewport = {
-  themeColor: '#12121a',
-}
+  themeColor: "#12121a",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={cn("bg-carbon-300", "text-gray-100", montserrat.variable, "font-sans", geist.variable)}>
+    <html
+      lang="fr"
+      className={cn(
+        "bg-carbon-300",
+        "text-gray-100",
+        montserrat.variable,
+        "font-sans",
+        geist.variable,
+      )}
+    >
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192.svg" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/icons/icon-192.svg"
+        />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="apple-mobile-web-app-title" content="Sam's Cars" />
         <script
           type="application/ld+json"
@@ -46,26 +66,33 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AutoRepair",
-              "name": "Sam's cars Hotton",
-              "image": "https://example.com/hero-garage.jpg",
+              name: "Sam's cars Hotton",
+              image: "https://example.com/hero-garage.jpg",
               "@id": "",
-              "url": "https://example.com",
-              "telephone": process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "+32470000000",
-              "address": {
+              url: "https://example.com",
+              telephone: process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "+32470000000",
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "Rue de Barvaux 25A",
-                "addressLocality": "Hotton",
-                "postalCode": "6990",
-                "addressCountry": "BE"
+                streetAddress: "Rue de Barvaux 25A",
+                addressLocality: "Hotton",
+                postalCode: "6990",
+                addressCountry: "BE",
               },
-              "priceRange": "$$",
-              "openingHoursSpecification": {
+              priceRange: "$$",
+              openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "08:00",
-                "closes": "18:00"
-              }
-            })
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "08:00",
+                closes: "18:00",
+              },
+            }),
           }}
         />
         {process.env.NEXT_PUBLIC_CLARITY_ID && (
@@ -76,7 +103,9 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className={`${montserrat.className} bg-carbon-300 text-gray-100 antialiased`}>
+      <body
+        className={`${montserrat.className} bg-carbon-300 text-gray-100 antialiased pb-24`}
+      >
         <Providers>
           <Navbar />
           {children}
@@ -86,5 +115,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  )
+  );
 }
