@@ -14,7 +14,7 @@ export function CTA() {
               Prêt à nous confier votre véhicule ?
             </h2>
             <p className="text-primary-200 text-lg">
-              Réservez en 2 minutes. Diagnostic gratuit à l'arrivée.
+              Réservez en 2 minutes. Diagnostic gratuit à l&apos;arrivée.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">

@@ -310,6 +310,7 @@ export default function AdminListingsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                 {photos.map((url, index) => (
                   <div key={index} className="relative">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={url} alt={`Photo ${index + 1}`} className="w-full h-24 object-cover rounded-lg" />
                     <button
                       type="button"
