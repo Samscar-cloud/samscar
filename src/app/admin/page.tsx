@@ -53,8 +53,6 @@ export default async function AdminPage() {
   return (
     <main className="min-h-screen bg-gray-100 pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-6 text-gray-900">Panneau d&apos;administration</h1>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
             <p className="text-sm text-gray-500">Utilisateurs</p>
@@ -116,22 +114,22 @@ export default async function AdminPage() {
             href="/admin/services"
             className="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition"
           >
-            <h2 className="text-xl font-semibold mb-2">Services</h2>
-            <p>Ajouter / éditer / supprimer des services.</p>
+            <h2 className="text-xl font-semibold mb-2 text-gray-900">Services</h2>
+            <p className="text-gray-600">Ajouter / éditer / supprimer des services.</p>
           </a>
           <a
             href="/admin/bookings"
             className="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition"
           >
-            <h2 className="text-xl font-semibold mb-2">Réservations</h2>
-            <p>Voir, confirmer ou annuler les réservations.</p>
+            <h2 className="text-xl font-semibold mb-2 text-gray-900">Réservations</h2>
+            <p className="text-gray-600">Voir, confirmer ou annuler les réservations.</p>
           </a>
           <a
             href="/admin/users"
             className="block bg-white rounded-xl shadow p-6 hover:shadow-lg transition"
           >
-            <h2 className="text-xl font-semibold mb-2">Clients</h2>
-            <p>Voir les comptes utilisateurs.</p>
+            <h2 className="text-xl font-semibold mb-2 text-gray-900">Clients</h2>
+            <p className="text-gray-600">Voir les comptes utilisateurs.</p>
           </a>
         </div>
       </div>
