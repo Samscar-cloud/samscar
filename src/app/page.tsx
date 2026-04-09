@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ["garage Hotton", "réparation auto Belgique", "mécanicien Hotton", "entretien voiture", "Sam's Cars"],
   openGraph: {
     title: "Sam's Cars Hotton — Garage & Réparation Auto en Belgique",
-    description: "Garage automobile à Hotton, Belgique. Réparation moteur, freins, révision complète, diagnostic électronique. Prise de rendez-vous en ligne, diagnostic gratuit à l'arrivée.",
+    description: "Garage à Hotton, Belgique. Réparation moteur, freins, révision complète, diagnostic électronique. RDV en ligne, diagnostic gratuit à l'arrivée.",
     url: "https://samscargarage.be",
     siteName: "Sam's Cars Garage Hotton",
     locale: "fr_BE",
