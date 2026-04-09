@@ -6,7 +6,7 @@ import { put, del } from '@vercel/blob';
 
 const MAX_PHOTOS = 10;
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
 
 export async function POST(
   request: NextRequest,
