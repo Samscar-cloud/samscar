@@ -36,7 +36,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com https://images.unsplash.com https://*.public.blob.vercel-storage.com",
+              "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com https://images.unsplash.com https://*.public.blob.vercel-storage.com https://via.placeholder.com",
               "connect-src 'self' https://maps.googleapis.com https://vitals.vercel-insights.com",
               "frame-src 'none'",
             ].join('; '),
