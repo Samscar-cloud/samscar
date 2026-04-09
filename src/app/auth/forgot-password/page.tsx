@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto bg-white rounded-xl shadow p-8">
-          <h1 className="text-2xl font-bold mb-4">Mot de passe oublié</h1>
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">Mot de passe oublié</h1>
           <p className="text-sm text-gray-600 mb-6">
             Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.
           </p>

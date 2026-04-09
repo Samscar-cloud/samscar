@@ -51,6 +51,8 @@ export function BookingForm({ user }: BookingFormProps) {
   const [promoCode, setPromoCode] = useState('')
   const [appliedPromo, setAppliedPromo] = useState<{ discountType: 'PERCENTAGE' | 'FIXED', discountValue: number, specialId: string } | null>(null)
   const [promoError, setPromoError] = useState('')
+  const [bookingSuccess, setBookingSuccess] = useState(false)
+  const [confirmedDate, setConfirmedDate] = useState('')
 
   const {
     register,
@@ -154,8 +156,8 @@ export function BookingForm({ user }: BookingFormProps) {
       })
 
       if (response.ok) {
-        alert('Réservation créée avec succès!')
-        // Redirect or show success
+        setConfirmedDate(`${data.date} à ${data.time}`)
+        setBookingSuccess(true)
       } else {
         const result = await response.json()
         alert(result?.error || 'Erreur lors de la création de la réservation')
@@ -169,6 +171,38 @@ export function BookingForm({ user }: BookingFormProps) {
   }
 
   const availableTimes = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00']
+
+  if (bookingSuccess) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className="max-w-2xl mx-auto glass-card p-8 md:p-12 rounded-2xl shadow-2xl bg-carbon-300 text-center"
+      >
+        <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/20 border-2 border-green-500/40">
+          <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 className="text-3xl font-black text-white mb-3">Réservation confirmée !</h2>
+        <p className="text-gray-300 text-lg mb-2">
+          Merci — nous vous attendons le <span className="text-primary-400 font-semibold">{confirmedDate}</span>.
+        </p>
+        <p className="text-gray-400 text-sm mb-8">
+          Un email de confirmation vous a été envoyé. En cas de question, appelez-nous directement.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" className="btn-secondary">
+            Retour à l&apos;accueil
+          </a>
+          <a href="/account" className="btn-primary">
+            Voir mes réservations
+          </a>
+        </div>
+      </motion.div>
+    )
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto glass-card p-4 md:p-8 rounded-2xl shadow-2xl relative overflow-hidden bg-carbon-300">

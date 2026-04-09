@@ -44,6 +44,6 @@ export const sendSMS = async (to: string, message: string) => {
     return result
   } catch (error) {
     console.error('SMS sending failed:', error)
-    throw error
+    return null
   }
 }

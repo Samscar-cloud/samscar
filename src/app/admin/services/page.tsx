@@ -103,32 +103,32 @@ export default function AdminServicesPage() {
             value={form.name}
             onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
             placeholder="Nom"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
           <input
             value={form.slug}
             onChange={(e) => setForm((prev) => ({ ...prev, slug: e.target.value }))}
             placeholder="Slug (unique)"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
           <input
             value={form.category}
             onChange={(e) => setForm((prev) => ({ ...prev, category: e.target.value }))}
             placeholder="Catégorie"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
           <input
             value={form.price}
             onChange={(e) => setForm((prev) => ({ ...prev, price: e.target.value }))}
             placeholder="Prix"
             type="number"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
           <textarea
             value={form.description}
             onChange={(e) => setForm((prev) => ({ ...prev, description: e.target.value }))}
             placeholder="Description"
-            className="p-3 border rounded-lg md:col-span-2"
+            className="p-3 border rounded-lg md:col-span-2 text-gray-900 bg-white placeholder:text-gray-400"
             rows={3}
           />
         </div>

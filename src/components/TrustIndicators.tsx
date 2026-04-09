@@ -65,7 +65,7 @@ export function TrustIndicators() {
               <AnimatedNumber
                 value={indicator.value}
                 suffix={indicator.suffix}
-                active={inView && index !== 3}
+                active={inView}
               />
               <span className="text-sm text-gray-400 uppercase tracking-widest mt-2 text-center">
                 {indicator.label}

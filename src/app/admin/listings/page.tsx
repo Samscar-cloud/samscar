@@ -224,14 +224,14 @@ export default function AdminListingsPage() {
             value={form.make}
             onChange={(e) => setForm((prev) => ({ ...prev, make: e.target.value }))}
             placeholder="Marque"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
             required
           />
           <input
             value={form.model}
             onChange={(e) => setForm((prev) => ({ ...prev, model: e.target.value }))}
             placeholder="Modèle"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
             required
           />
           <input
@@ -239,7 +239,7 @@ export default function AdminListingsPage() {
             onChange={(e) => setForm((prev) => ({ ...prev, year: e.target.value }))}
             placeholder="Année"
             type="number"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
             required
           />
           <input
@@ -247,7 +247,7 @@ export default function AdminListingsPage() {
             onChange={(e) => setForm((prev) => ({ ...prev, price: e.target.value }))}
             placeholder="Prix (€)"
             type="number"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
             required
           />
           <input
@@ -255,12 +255,12 @@ export default function AdminListingsPage() {
             onChange={(e) => setForm((prev) => ({ ...prev, mileage: e.target.value }))}
             placeholder="Kilométrage"
             type="number"
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
           <select
             value={form.status}
             onChange={(e) => setForm((prev) => ({ ...prev, status: e.target.value }))}
-            className="p-3 border rounded-lg"
+            className="p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           >
             <option value="AVAILABLE">Disponible</option>
             <option value="RESERVED">Réservé</option>
@@ -364,7 +364,7 @@ export default function AdminListingsPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Recherche par marque, modèle, description..."
-            className="w-full md:w-1/2 p-3 border rounded-lg"
+            className="w-full md:w-1/2 p-3 border rounded-lg text-gray-900 bg-white placeholder:text-gray-400"
           />
         </div>
 

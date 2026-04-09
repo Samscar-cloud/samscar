@@ -53,26 +53,26 @@ export function Reviews() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-carbon-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Avis Clients</h2>
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">Avis Clients</h2>
+        <div className="max-w-2xl mx-auto bg-carbon-400 border border-white/10 rounded-2xl shadow-xl p-8">
           <div className="flex mb-4">
             {[...Array(5)].map((_, i) => (
               <span
                 key={i}
                 className={`text-2xl ${
-                  i < (displayReviews[currentReview]?.rating || 0) ? 'text-yellow-400' : 'text-gray-300'
+                  i < (displayReviews[currentReview]?.rating || 0) ? 'text-yellow-400' : 'text-gray-600'
                 }`}
               >
                 ★
               </span>
             ))}
           </div>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4 text-gray-200 leading-relaxed">
             &ldquo;{displayReviews[currentReview]?.comment || 'Un service de qualité.'}&rdquo;
           </p>
-          <p className="font-semibold">- {displayReviews[currentReview]?.user?.name || 'Client'}</p>
+          <p className="font-semibold text-primary-400">— {displayReviews[currentReview]?.user?.name || 'Client'}</p>
         </div>
         <div className="flex justify-center mt-8">
           {displayReviews.map((_, index) => (

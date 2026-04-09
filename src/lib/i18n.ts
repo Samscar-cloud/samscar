@@ -1,9 +1,9 @@
 export type Locale = 'fr' | 'en' | 'ru'
 
 export const locales: Record<Locale, string> = {
-  fr: 'Français',
-  en: 'English',
-  ru: 'Русский',
+  fr: 'FR',
+  en: 'EN',
+  ru: 'RU',
 }
 
 export const translations = {
