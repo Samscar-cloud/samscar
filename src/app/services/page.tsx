@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services Auto — Sam's Cars Hotton",
     description: "Changement de freins, réparation moteur, révision. Prenez RDV en ligne.",
-    url: "https://samscarage.be/services",
+    url: "https://samscargarage.be/services",
     siteName: "Sam's Cars",
     locale: "fr_BE",
     type: "website",
   },
-  alternates: { canonical: "https://samscarage.be/services" },
+  alternates: { canonical: "https://samscargarage.be/services" },
 }
 
 const STATIC_SERVICES = [

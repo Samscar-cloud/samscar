@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Garage automobile à Hotton, Belgique. Réparation, entretien, prise de RDV en ligne.",
   manifest: "/manifest.json",
-  metadataBase: new URL("https://samscarage.be"),
+  metadataBase: new URL("https://samscargarage.be"),
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

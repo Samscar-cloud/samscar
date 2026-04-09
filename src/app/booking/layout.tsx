@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prendre RDV — Sam's Cars Hotton",
     description: "Réservez votre rendez-vous en ligne. Rapide, simple et gratuit.",
-    url: "https://samscarage.be/booking",
+    url: "https://samscargarage.be/booking",
     siteName: "Sam's Cars",
     locale: "fr_BE",
     type: "website",
   },
-  alternates: { canonical: "https://samscarage.be/booking" },
+  alternates: { canonical: "https://samscargarage.be/booking" },
 }
 
 export default function BookingLayout({ children }: { children: React.ReactNode }) {

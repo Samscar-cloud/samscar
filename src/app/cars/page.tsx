@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Catalogue Véhicules — Sam's Cars Hotton",
     description: "Voitures d'occasion à vendre à Hotton. Véhicules inspectés, prix transparents.",
-    url: "https://samscarage.be/cars",
+    url: "https://samscargarage.be/cars",
     siteName: "Sam's Cars",
     locale: "fr_BE",
     type: "website",
   },
-  alternates: { canonical: "https://samscarage.be/cars" },
+  alternates: { canonical: "https://samscargarage.be/cars" },
 }
 
 export default async function CarsPage({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {

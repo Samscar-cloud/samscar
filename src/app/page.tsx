@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sam's Cars Hotton — Garage & Réparation Auto",
     description: "Garage automobile à Hotton. Réparation, entretien, prise de RDV en ligne.",
-    url: "https://samscarage.be",
+    url: "https://samscargarage.be",
     siteName: "Sam's Cars",
     locale: "fr_BE",
     type: "website",
   },
-  alternates: { canonical: "https://samscarage.be" },
+  alternates: { canonical: "https://samscargarage.be" },
 }
 import { ServicesPreview } from '@/components/ServicesPreview'
 import { TrustIndicators } from '@/components/TrustIndicators'

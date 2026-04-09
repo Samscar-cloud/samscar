@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://samscarage.be'
+  const base = 'https://samscargarage.be'
 
   return [
     { url: base, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
