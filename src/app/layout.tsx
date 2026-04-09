@@ -18,6 +18,9 @@ export const metadata = {
     "Garage automobile à Hotton, Belgique. Réparation, entretien, prise de RDV en ligne.",
   manifest: "/manifest.json",
   metadataBase: new URL("https://samscargarage.be"),
+  openGraph: {
+    images: [{ url: "/hero-garage.jpg", width: 1200, height: 630 }],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
