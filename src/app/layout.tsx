@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Montserrat, Geist } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,16 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="fr"
-      className={cn(
-        "bg-carbon-300",
-        "text-gray-100",
-        montserrat.variable,
-        "font-sans",
-        geist.variable,
-      )}
-    >
+    <html lang="fr" className={`${montserrat.variable} bg-carbon-300 text-gray-100`}>
       <head>
         <link
           rel="apple-touch-icon"
