@@ -35,9 +35,22 @@ export function LocationMap() {
 
   if (!apiKey) {
     return (
-      <div className="bg-white p-4 rounded-xl border border-red-200">
-        <p className="text-red-600">Google Maps API key not configured.</p>
-      </div>
+      <section className="rounded-2xl overflow-hidden my-8 border border-white/10">
+        <div className="relative h-64 bg-carbon-200 flex flex-col items-center justify-center gap-4">
+          <div className="text-center px-4">
+            <p className="text-white font-semibold text-lg mb-1">Sam&apos;s Cars — Hotton, Belgique</p>
+            <p className="text-gray-400 text-sm">Rue de la Station, 6990 Hotton</p>
+          </div>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-sm"
+          >
+            🧭 Voir sur Google Maps
+          </a>
+        </div>
+      </section>
     )
   }
 
