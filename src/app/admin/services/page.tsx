@@ -144,9 +144,9 @@ export default function AdminServicesPage() {
         ) : (
           <div className="space-y-4">
             {services.map((service) => (
-              <div key={service.id} className="flex items-start justify-between gap-4 border-b pb-4">
+              <div key={service.id} className="flex flex-col gap-3 border-b pb-4">
                 <div>
-                  <p className="font-semibold">{service.name}</p>
+                  <p className="font-semibold text-gray-900">{service.name}</p>
                   <p className="text-sm text-gray-600">{service.category} — {service.price ? `${service.price} €` : '—'}</p>
                 </div>
                 <div className="flex gap-2">
@@ -161,11 +161,11 @@ export default function AdminServicesPage() {
                         slug: service.slug,
                       })
                     }}
-                    className="btn-secondary"
+                    className="btn-secondary flex-1"
                   >
                     Modifier
                   </button>
-                  <button onClick={() => handleDelete(service.id)} className="btn-accent">
+                  <button onClick={() => handleDelete(service.id)} className="btn-accent flex-1">
                     Supprimer
                   </button>
                 </div>
