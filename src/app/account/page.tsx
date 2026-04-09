@@ -274,7 +274,7 @@ export default function AccountPage() {
                       </p>
                       {booking.vehicle && (
                         <p className="text-sm text-gray-400">
-                          Véхикуле: {booking.vehicle.make} {booking.vehicle.model} ({booking.vehicle.year})
+                          Véhicule: {booking.vehicle.make} {booking.vehicle.model} ({booking.vehicle.year})
                         </p>
                       )}
                       {booking.notes && <p className="text-sm text-gray-400">Notes: {booking.notes}</p>}

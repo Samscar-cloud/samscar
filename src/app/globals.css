@@ -109,7 +109,17 @@
   .bg-gray-50 input,
   .bg-gray-50 select,
   .bg-gray-50 textarea {
-    @apply text-gray-900 bg-white placeholder:text-gray-400;
+    color: #111827;
+    background-color: #ffffff;
+  }
+
+  .bg-white input::placeholder,
+  .bg-white select::placeholder,
+  .bg-white textarea::placeholder,
+  .bg-gray-50 input::placeholder,
+  .bg-gray-50 select::placeholder,
+  .bg-gray-50 textarea::placeholder {
+    color: #9ca3af;
   }
 
   /* Labels inside light containers */
@@ -118,11 +128,9 @@
     @apply text-gray-700;
   }
 
-  /* Headings and text inside light containers */
+  /* Headings inside light containers */
   .bg-white h1, .bg-white h2, .bg-white h3,
-  .bg-white p:not([class*="text-"]),
-  .bg-gray-50 h1, .bg-gray-50 h2, .bg-gray-50 h3,
-  .bg-gray-50 p:not([class*="text-"]) {
+  .bg-gray-50 h1, .bg-gray-50 h2, .bg-gray-50 h3 {
     @apply text-gray-900;
   }
 }
