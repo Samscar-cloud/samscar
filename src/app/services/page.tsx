@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description: "Découvrez tous nos services: changement de freins, réparation moteur, révision complète. Garage Sam's Cars à Hotton, Belgique.",
   keywords: ["services garage", "réparation freins", "révision voiture", "entretien auto Hotton"],
   openGraph: {
-    title: "Services Auto — Sam's Cars Hotton",
-    description: "Changement de freins, réparation moteur, révision. Prenez RDV en ligne.",
+    title: "Services Réparation Auto — Garage Sam's Cars Hotton Belgique",
+    description: "Tous nos services auto à Hotton: changement de freins, réparation moteur, révision complète, climatisation, diagnostic électronique. Prix transparents, RDV en ligne.",
     url: "https://samscargarage.be/services",
     siteName: "Sam's Cars",
     locale: "fr_BE",

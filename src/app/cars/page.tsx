@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Parcourez notre catalogue de voitures d'occasion à vendre à Hotton, Belgique. Véhicules inspectés, prix transparents.",
   keywords: ["voiture occasion Hotton", "acheter voiture Belgique", "catalogue auto", "véhicule occasion"],
   openGraph: {
-    title: "Catalogue Véhicules — Sam's Cars Hotton",
-    description: "Voitures d'occasion à vendre à Hotton. Véhicules inspectés, prix transparents.",
+    title: "Catalogue Véhicules d'Occasion — Sam's Cars Hotton Belgique",
+    description: "Parcourez nos voitures d'occasion à vendre à Hotton, Belgique. Chaque véhicule est inspecté par nos mécaniciens. Prix transparents, sans frais cachés.",
     url: "https://samscargarage.be/cars",
     siteName: "Sam's Cars",
     locale: "fr_BE",
