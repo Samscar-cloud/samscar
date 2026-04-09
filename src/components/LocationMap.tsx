@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 
-const center = { lat: 50.2691, lng: 5.4452 } // Hotton
+const center = { lat: 50.2806, lng: 5.4561 } // Rue de Barvaux 25A, 6990 Hotton
 
 function render(status: Status) {
   return <p className="text-sm text-gray-500">Map loading: {status}</p>
@@ -39,7 +39,7 @@ export function LocationMap() {
         <div className="relative h-64 bg-carbon-200 flex flex-col items-center justify-center gap-4">
           <div className="text-center px-4">
             <p className="text-white font-semibold text-lg mb-1">Sam&apos;s Cars — Hotton, Belgique</p>
-            <p className="text-gray-400 text-sm">Rue de la Station, 6990 Hotton</p>
+            <p className="text-gray-400 text-sm">Rue de Barvaux 25A, 6990 Hotton</p>
           </div>
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`}
