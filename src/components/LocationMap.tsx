@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 
-const center = { lat: 50.2806, lng: 5.4561 } // Rue de Barvaux 25A, 6990 Hotton
+const center = { lat: 50.28598, lng: 5.45921 } // Rue de Barvaux 25A, 6990 Hotton
 
 function render(status: Status) {
   return <p className="text-sm text-gray-500">Map loading: {status}</p>
