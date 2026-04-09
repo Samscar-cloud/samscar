@@ -2,6 +2,24 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { ServiceCard } from '@/components/ServiceCard'
+import {
+  WrenchScrewdriverIcon,
+  Cog6ToothIcon,
+  StopCircleIcon,
+  AdjustmentsHorizontalIcon,
+  BoltIcon,
+  TruckIcon,
+} from '@heroicons/react/24/outline'
+import type { ComponentType, SVGProps } from 'react'
+
+const SLUG_ICON_MAP: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+  engine: WrenchScrewdriverIcon,
+  transmission: Cog6ToothIcon,
+  brakes: StopCircleIcon,
+  suspension: AdjustmentsHorizontalIcon,
+  electrical: BoltIcon,
+  bodywork: TruckIcon,
+}
 
 export const dynamic = 'force-dynamic'
 
@@ -58,7 +76,7 @@ export default async function ServicesPage() {
             <ServiceCard
               key={service.id}
               name={service.name}
-              icon={'icon' in service ? (service as { icon?: string }).icon ?? '🔧' : '🔧'}
+              icon={SLUG_ICON_MAP[service.slug] ?? WrenchScrewdriverIcon}
               slug={service.slug}
             />
           ))}
