@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -77,7 +77,9 @@ export function Navbar() {
             </Link>
           )}
           <div className="h-5 w-px bg-white/20" />
-          <LocaleSwitcher />
+          <Suspense fallback={null}>
+            <LocaleSwitcher />
+          </Suspense>
         </nav>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -133,7 +135,9 @@ export function Navbar() {
                 </Link>
               )}
               <div className="flex justify-start">
-                <LocaleSwitcher />
+                <Suspense fallback={null}>
+                  <LocaleSwitcher />
+                </Suspense>
               </div>
             </div>
           </motion.div>
