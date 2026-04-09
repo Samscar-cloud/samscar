@@ -1,33 +1,39 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import type { ComponentType, SVGProps } from 'react'
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
-  name: string
-  icon: string
-  slug: string
+  readonly name: string
+  readonly icon: ComponentType<SVGProps<SVGSVGElement>>
+  readonly slug: string
 }
 
-export function ServiceCard({ name, icon, slug }: ServiceCardProps) {
+export function ServiceCard({ name, icon: Icon, slug }: ServiceCardProps) {
   return (
-    <Link href={`/services/${slug}`} className="block h-full cursor-pointer">
-      <motion.div 
+    <Link href={`/services/${slug}`} className="block h-full">
+      <motion.div
         whileHover={{ y: -8, scale: 1.02 }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3 }}
-        className="glass-card p-8 h-full flex flex-col items-center text-center group border border-transparent hover:border-primary-500/30"
+        className="group h-full rounded-3xl border border-gray-200 bg-white p-8 text-left shadow-sm transition-all duration-300 hover:shadow-lg"
       >
-        <div className="text-5xl mb-6 bg-carbon-300 p-4 rounded-2xl shadow-inner shadow-black/50 text-secondary-500 group-hover:text-primary-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
-          {icon}
+        <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-lg">
+          <Icon className="h-6 w-6" aria-hidden="true" />
         </div>
-        <h3 className="text-xl font-bold mb-3 text-white">{name}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">
-          Service professionnel pour {name.toLowerCase()} avec garantie de qualité.
+        <h3 className="text-xl font-bold mb-3 text-gray-900">{name}</h3>
+        <p className="text-gray-600 text-sm leading-relaxed mb-8">
+          Service professionnel pour {name.toLowerCase()} avec garantie de
+          qualité.
         </p>
+        <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-all duration-300 group-hover:translate-x-1">
+          <span>En savoir plus</span>
+          <span aria-hidden="true">→</span>
+        </div>
       </motion.div>
     </Link>
-  )
+  );
 }
